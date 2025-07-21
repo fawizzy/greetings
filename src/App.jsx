@@ -1,7 +1,6 @@
 import { useState } from "react";
 import abi from "../abi.json";
 import { ethers } from "ethers";
-import toast from 'toastify'
 
 const contractAddress = "0x9D1eb059977D71E1A21BdebD1F700d4A39744A70";
 
@@ -29,7 +28,6 @@ function App() {
 
         const tx = await contract.setMessage(text); 
         const txReceipt = await tx.wait();
-        toast.success("message sent")
       } else {
         console.error("MetaMask not found. Please install MetaMask to use this application.");
       }
